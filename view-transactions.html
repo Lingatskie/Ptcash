@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Records</title>
+    <link rel="stylesheet" href="css/view.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h1>PCS</h1>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="view-transactions.html">View Transactions</a></li>
+            <li><a href="add-custodian.html">Add Custodian</a></li>
+            <li><a href="update-fund.html">Update Fund</a></li>
+            <li><a href="logout.php">Log out</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="main-content">
+        <div class="header">
+            <!-- Burger Menu Input Checkbox -->
+            <input type="checkbox" role="button" aria-label="Display the menu" class="menu" id="menu-toggle">
+            <h2>Petty Cash System</h2>
+            <div class="admin">Admin</div>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+
+        <div class="table-container">
+            <h2>Transaction Records</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Date</th>
+                        <th>Amount Given</th>
+                        <th>OR#</th>
+                        <th>Description</th>
+                        <th>Receipt Image</th>
+                        <th>Total</th>
+                        <th>Purchaser</th>
+                        <th>Employee ID</th>
+                        <th>Personal Contribution</th>
+                        <th>Store Name</th>
+                        <th>Custodian</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2024-10-12</td>
+                        <td>₱1000.00</td>
+                        <td>OR123456</td>
+                        <td>Office Supplies</td>
+                        <td><img src="path/to/image1.jpg" alt="Receipt 1" width="100"></td>
+                        <td>₱1000.00</td>
+                        <td>John Doe</td>
+                        <td>EMP001</td>
+                        <td>₱0.00</td>
+                        <td>ABC Store</td>
+                        <td>Custodian 1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>2024-10-11</td>
+                        <td>₱2000.00</td>
+                        <td>OR123457</td>
+                        <td>Stationery</td>
+                        <td><img src="path/to/image2.jpg" alt="Receipt 2" width="100"></td>
+                        <td>₱2000.00</td>
+                        <td>Jane Smith</td>
+                        <td>EMP002</td>
+                        <td>₱500.00</td>
+                        <td>XYZ Store</td>
+                        <td>Custodian 2</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Toggle sidebar visibility based on the checkbox state
+        document.getElementById('menu-toggle').addEventListener('change', function() {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('main-content');
+            if (this.checked) {
+                sidebar.classList.add('active');
+                mainContent.classList.remove('active'); // Reset margin when menu is open
+            } else {
+                sidebar.classList.remove('active');
+                mainContent.classList.add('active'); // Adjust margin when menu is closed
+            }
+        });
+    </script>
+</body>
+</html>
